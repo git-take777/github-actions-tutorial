@@ -1,0 +1,10 @@
+name: Schedule
+on:
+  schedule: # 定期実行イベント
+    # - cron: "0 0 * * *" # スケジュールの定義 (cron: '0 0 * * *' は毎日0時に実行される)
+    - cron: "*/15 * * * *" # スケジュールの定義 (15分ごとに実行される)
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: date
