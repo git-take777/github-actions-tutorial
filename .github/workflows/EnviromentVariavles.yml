@@ -6,7 +6,7 @@ jobs:
     env: # 環境変数の定義
       BRANCH: main # 環境変数の名前
     steps:
-      - run: echo "${{ BRANCH }}" # ジョブレベルの環境変数を参照
+      - run: echo "${{ env.BRANCH }}" # ジョブレベルの環境変数を参照
       - uses: actions/checkout@v4 # ワークフローのチェックアウト
         with:
           ref: ${{ env.BRANCH }} # envコンテキスト経由でジョブレベルの環境変数を参照
