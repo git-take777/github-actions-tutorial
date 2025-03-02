@@ -1,0 +1,9 @@
+name: Variables
+on: push
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    env: # 環境変数の定義
+      USERNAME: ${{ vars.USERNAME }} # 変数の参照
+    steps:
+      - run: echo "${USERNAME}" # イベント名の出力
