@@ -251,6 +251,21 @@
                 runs-on: ubuntu-latest
                 steps: - run: export RESULT="hello" - run: echo "RESULT is $RESULT"
               `
+<<<<<<< HEAD
+=======
+            3.9.1 GITHUB_OUTPUT 環境変数
+              ` name: GITHUB_OUTPUT
+                on: push
+                jobs:
+                 share:
+                   runs-on: ubuntu-latest
+                   steps:
+                    runs-on: ubuntu-latest
+                    steps:
+                      - id: source
+                        run: echo
+              `
+>>>>>>> 4763414 (fix: ３章の内容をまとめてpush)
 
 - Web アプリケーションのテストと自動デプロイ
 - モバイルアプリのビルドと配布
