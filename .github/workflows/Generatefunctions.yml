@@ -1,0 +1,15 @@
+name: Generate functions
+on: push
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - run: printenv | grep '_FUNC'
+        env:
+          FORMAT_FUNC: ${{ format('Hello, {0}!', 'World') }}
+          JOIN_FUNC: ${{ join(github.event.*.html_url, ', ') }}
+
+          # toJSON(): # 引数のおぶじぇくとをJSONに変換する;
+          # fromJSON(): # JSONを引数のおぶじぇくとに変換する;
+      # ハッシュ生成
+        - hashFiles():  引数のパスからファイルのハッシュ値を生成する

@@ -1,0 +1,20 @@
+name: Compare functions
+on: push
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    steps:
+      - run: printenv | grep '_FUNC'
+    env:
+      CONTAINS_FUNC: ${{  contains('Hello', 'eil') }} #eilを含まれているか
+      STARTS_WITH_FUNC: ${{ startsWith('Hello', 'He') }} #Heで始まっているか
+      ENDS_WITH_FUNC: ${{ endsWith('Hello', 'lo') }} #loで終わっているか
+
+
+      # contains関数は少し特殊で、文字列だけでなく配列も比較できる。第一引数に配列を指定した場合第二引数に含まれているかを判定する
+      # 例 配列に含まれているかを判定する場合 # contains([1, 2, 3], 2) # true
+      # 条件分岐とともに使う時に発揮する
+
+      # 文字列生成
+      # - format(): '第一引数の文字列を第2引数以降の文字列でフォーマットする'
+      # - join(): '第一引数の配列の要素を第二引数の文字列で結合する'
