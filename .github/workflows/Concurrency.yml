@@ -1,0 +1,9 @@
+name: Concurrency
+on: push
+concurrency: ${{ github.workflow }}
+jobs:
+  sleep:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 120
+  # 上記のようにすればワークフローが2重に実行されることはない。仮に2つ目が実行されるタイミングで待機状態になる。
